@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #f42c37;
+  --color-brandyellow: #fdc62e;
+  --color-brandgreen: #2dcc6f;
+  --color-brandblue: #1376f4;
+  --color-brandwhite: #eeeeee;
+}
+
+@utility container {
+  width: 100%;
+  margin-inline: auto;
+  padding-inline: 1rem;
+
+  @media (min-width: 640px) {
+    padding-inline: 3rem;
+  }
+}
+
+@layer components {
+  .search-bar {
+    @apply w-0
+      group-hover:w-[300px]
+      transition-all
+      duration-300
+      rounded-full
+      group-hover:border
+      group-hover:border-gray-500
+      px-3
+      py-1
+      focus:outline-none
+      dark:bg-gray-900
+      dark:text-white
+      dark:placeholder-gray-400;
+  }
+}
+
+@custom-variant dark (&:where(.dark, .dark *));
